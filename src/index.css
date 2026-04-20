@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clean Académique — Slate navy + teal accent */
+    --background: 210 20% 98%;
+    --foreground: 215 28% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 215 50% 23%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 18% 93%;
+    --secondary-foreground: 215 28% 25%;
+
+    --muted: 210 14% 95%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 172 50% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 16% 90%;
+    --input: 214 16% 87%;
+    --ring: 172 50% 40%;
+
+    --radius: 0.625rem;
+
+    --success: 152 56% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 30 80% 15%;
+    --info: 210 90% 52%;
+    --info-foreground: 0 0% 100%;
+    --pending: 38 92% 50%;
+    --pending-foreground: 30 80% 15%;
+    --accepted: 152 56% 40%;
+    --accepted-foreground: 0 0% 100%;
+    --rejected: 0 65% 52%;
+    --rejected-foreground: 0 0% 100%;
+
+    --sidebar-background: 215 50% 18%;
+    --sidebar-foreground: 210 20% 88%;
+    --sidebar-primary: 172 50% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 40% 25%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 215 35% 28%;
+    --sidebar-ring: 172 50% 45%;
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 20% 93%;
+    --card: 215 28% 12%;
+    --card-foreground: 210 20% 93%;
+    --popover: 215 28% 12%;
+    --popover-foreground: 210 20% 93%;
+    --primary: 172 50% 45%;
+    --primary-foreground: 215 50% 10%;
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 20% 88%;
+    --muted: 215 20% 15%;
+    --muted-foreground: 215 10% 55%;
+    --accent: 172 50% 45%;
+    --accent-foreground: 215 50% 10%;
+    --destructive: 0 55% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 172 50% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Focus visible for accessibility */
+@layer utilities {
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
